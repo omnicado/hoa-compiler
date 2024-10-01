@@ -203,8 +203,8 @@ class Parser
                         $leftnl = strrpos($text, "\n", -(strlen($text) - $offset) - 1) ?: 0;
                     }
 
-                    $rightnl = strpos($text, "\n", $offset);
-                    $line    = substr_count($text, "\n", 0, $leftnl + 1) + 1;
+                    $rightnl = strpos($text ?? '', "\n", $offset);
+                    $line    = substr_count($text ?? '', "\n", 0, $leftnl + 1) + 1;
                     $column  = $offset - $leftnl + (0 === $leftnl);
 
                     if (false !== $rightnl) {

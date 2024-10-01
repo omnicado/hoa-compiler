@@ -122,7 +122,7 @@ class Lexer
             $_tokens = [];
 
             foreach ($tokens as $fullLexeme => $regex) {
-                if (false === strpos($fullLexeme, ':')) {
+                if (false === strpos($fullLexeme ?? '', ':')) {
                     $_tokens[$fullLexeme] = [$regex, null];
 
                     continue;
